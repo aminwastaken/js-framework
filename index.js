@@ -24,9 +24,8 @@ const myobj = {
 
 const output = Component.generateNodeElements(myobj);
 var a = parent.document.createElement("p");
-a.innerHTML = "click me";
-a.addEventListener("click", (event) => console.log("works here"));
+// a.innerHTML = "click me";
+// a.addEventListener("click", (event) => console.log("works here"));
 
 const root = document.getElementById("root");
 root.appendChild(output);
-root.appendChild(a);
