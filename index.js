@@ -1,15 +1,25 @@
 import Component from "./Component.js";
-
+const anotherObject = (props) => {
+  console.log("props");
+  console.log(props);
+  return {
+    type: "strong",
+    children: ["i'm a child"],
+  };
+};
 const myobj = {
+  // object example
   type: "div",
   children: [
     {
       type: "p",
       children: ["test"],
-      attributes: { onclick: (event) => console.log(event.target) },
+      props: { onclick: (event) => console.log(event.target) },
     },
     { type: "div", children: [{ type: "a", children: ["link1"] }] },
+    { type: anotherObject, props: { prop1: "myprop" } },
   ],
+  props: { test: "hiii" },
 };
 
 const output = Component.generateNodeElements(myobj);
