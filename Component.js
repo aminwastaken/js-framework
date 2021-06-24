@@ -1,8 +1,8 @@
 const generateNodeElements = (obj) => {
-  const elementToRender = document.createElement(obj.Type);
+  const elementToRender = document.createElement(obj.type);
   if (obj.children) {
     for (let child of obj.children) {
-      childToRender =
+      const childToRender =
         typeof child === "string"
           ? document.createTextNode(child) // if the child is a string, a text node is created
           : generateNodeElements(child); // the generateNodeElements function gets called for each child that isn't a string
@@ -22,9 +22,10 @@ const generateNodeElements = (obj) => {
     }
   }
 
-  return element;
+  return elementToRender;
 };
 
-const Component = {};
+//this object contains all of the framework tools
+const Component = { generateNodeElements: generateNodeElements };
 
 export default Component;
