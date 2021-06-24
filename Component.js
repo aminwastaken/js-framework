@@ -11,7 +11,7 @@ const generateNodeElements = (obj) => {
   }
 
   // getting all the event listeners from the input and implementing them in the element to render
-  if (obj.attribute) {
+  if (obj.attributes) {
     for (let attribute in obj.attributes) {
       if (attribute.startsWith("on")) {
         elementToRender.addEventListener(
