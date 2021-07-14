@@ -12,13 +12,13 @@ class App extends Component {
     const homePage = new HomePage(); // this is how you can import another component
     const someText = this.createElement("p", null, "some more text"); // creating a paragraph
     const output = this.createElement(
-      // creating a div that contains
+      // creating a div that contains a home page, a paragraph and a text node
       "div",
       null, // no properties passed
       homePage, // child 1
       someText, // child 2
       "testing testing" // child 3
-      // you can pass as many children as you want in her
+      // you can pass as many children as you want in here
     );
     return output;
   }
