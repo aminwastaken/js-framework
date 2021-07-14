@@ -1,6 +1,10 @@
-import generateNodeElements from "./generateNodeElements.js";
+import createElement from "./createElement.js";
+import render from "./render.js";
 
 //this object contains all of the framework tools
-const Component = { generateNodeElements: generateNodeElements };
+const Component = {
+  render: render,
+  createElement: createElement,
+};
 
 export default Component;

@@ -1,4 +1,10 @@
 import Component from "./Component.js";
+import createElement from "./createElement.js";
+
+const p = createElement("p", { name: "paragraph" }, "my text");
+const div = createElement("div", null, p);
+console.log(div);
+
 const anotherObject = (props) => {
   console.log("props");
   console.log(props);
@@ -13,19 +19,20 @@ const myobj = {
   children: [
     {
       type: "p",
-      children: ["test"],
-      props: { onclick: (event) => console.log(event.target) },
+      children: ["yolo"],
+      props: {
+        onclick: (event) => console.log(event.target),
+        name: "im just a string",
+      },
     },
     { type: "div", children: [{ type: "a", children: ["link1"] }] },
     { type: anotherObject, props: { prop1: "myprop" } },
   ],
-  props: { test: "hiii" },
+  props: { name: "mydiv" },
 };
 
-const output = Component.generateNodeElements(myobj);
+const output = Component.render(div);
 var a = parent.document.createElement("p");
-// a.innerHTML = "click me";
-// a.addEventListener("click", (event) => console.log("works here"));
 
 const root = document.getElementById("root");
 root.appendChild(output);
