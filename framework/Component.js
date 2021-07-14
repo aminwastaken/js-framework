@@ -1,5 +1,5 @@
-import createElement from "./createElement.js";
-import render from "./render.js";
+import createElement from "./functions/createElement.js";
+import render from "./functions/render.js";
 
 //this object contains all of the framework tools
 const Component = {

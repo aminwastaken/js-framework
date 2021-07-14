@@ -1,8 +1,7 @@
-import Component from "./Component.js";
-import createElement from "./createElement.js";
+import Component from "./framework/Component.js";
 
-const p = createElement("p", { name: "paragraph" }, "my text");
-const div = createElement("div", null, p);
+const p = Component.createElement("p", { name: "paragraph" }, "my text");
+const div = Component.createElement("div", null, p);
 console.log(div);
 
 const anotherObject = (props) => {
