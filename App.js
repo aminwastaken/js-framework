@@ -1,5 +1,6 @@
 import HomePage from "./components/HomePage.js";
 import Component from "./framework/Component.js";
+import createElement from "./framework/functions/createElement.js";
 
 class App extends Component {
   // all components should extend from the componenet class
@@ -10,8 +11,8 @@ class App extends Component {
 
   buildComponenent() {
     const homePage = new HomePage(); // this is how you can import another component
-    const someText = this.createElement("p", null, "some more text"); // creating a paragraph
-    const output = this.createElement(
+    const someText = createElement("p", null, "some more text"); // creating a paragraph
+    const output = createElement(
       // creating a div that contains a home page, a paragraph and a text node
       "div",
       null, // no properties passed

@@ -1,4 +1,5 @@
 import Component from "../framework/Component.js";
+import createElement from "../framework/functions/createElement.js";
 
 class HomePage extends Component {
   constructor() {
@@ -11,18 +12,14 @@ class HomePage extends Component {
   }
 
   buildComponenent() {
-    const titleText = this.createElement(
-      "h1",
-      { name: "myTitle" },
-      "hello world"
-    );
-    const paragraph = this.createElement(
+    const titleText = createElement("h1", { name: "myTitle" }, "hello world");
+    const paragraph = createElement(
       "p",
       { name: "pragraph" },
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel nisi metus. Suspendisse ac placerat nisi. Pellentesque eros augue."
     );
 
-    const button = this.createElement(
+    const button = createElement(
       "button",
       {
         onclick: this.onclick,
@@ -30,13 +27,7 @@ class HomePage extends Component {
       },
       "click me "
     );
-    const container = this.createElement(
-      "div",
-      null,
-      titleText,
-      paragraph,
-      button
-    );
+    const container = createElement("div", null, titleText, paragraph, button);
     return container;
   }
 }
