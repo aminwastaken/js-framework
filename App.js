@@ -1,7 +1,7 @@
-import HomePage from "./components/HomePage.js";
 import Component from "./framework/Component.js";
 import createElement from "./framework/functions/createElement.js";
 import Main from "./components/main.js";
+import routing from "./framework/functions/routing.js";
 
 class App extends Component {
   // all components should extend from the componenet class
@@ -11,10 +11,18 @@ class App extends Component {
   }
 
   buildComponenent() {
-    const output = createElement(Main);
-    return output;
-    // routeFunc("/", Main)
-    // routeFunc("/", createElement(Main))
+    return routing([
+      { path: "/", component: createElement(Main) },
+      {
+        path: "/second",
+        component: createElement("div", null, "This is the second route"),
+      },
+      {
+        path: "/third",
+        component: createElement("div", null, "This is the third route"),
+      },
+    ]);
+
   }
 }
 
