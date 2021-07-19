@@ -13,7 +13,9 @@ class App extends Component {
 
   buildComponenent() {
     return routing([
-      { path: "/", component: createElement(Main) },
+      { path: "/",
+        component: Main
+      },
       {
         path: "/second",
         component: createElement("div", null, "This is the second route"),
@@ -22,10 +24,10 @@ class App extends Component {
         path: "/third",
         component: createElement("div", null, "This is the third route"),
       },
-      /*{
+      {
         path: "/typeCheckError",
-        component: createElement(TypeCheckComponent, {}),
-      },*/
+        component: TypeCheckComponent,
+      },
     ]);
 
   }
