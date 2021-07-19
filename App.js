@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   buildComponenent() {
-    const homePage = new HomePage(); // this is how you can import another component
+    const homePage = createElement(HomePage, { title: "this is the title" });
     const someText = createElement("p", null, "some more text"); // creating a paragraph
     const output = createElement(
       // creating a div that contains a home page, a paragraph and a text node

@@ -2,8 +2,10 @@ import Component from "../framework/Component.js";
 import createElement from "../framework/functions/createElement.js";
 
 class HomePage extends Component {
-  constructor() {
+  constructor(props, children) {
     super();
+    this.props = props;
+    console.log(this.props);
     return this.buildComponenent();
   }
 
@@ -12,7 +14,11 @@ class HomePage extends Component {
   }
 
   buildComponenent() {
-    const titleText = createElement("h1", { name: "myTitle" }, "hello world");
+    const titleText = createElement(
+      "h1",
+      { name: "myTitle" },
+      this.props.title
+    );
     const paragraph = createElement(
       "p",
       { name: "pragraph" },

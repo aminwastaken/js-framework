@@ -1,4 +1,5 @@
 const createElement = (type, props, ...children) => {
+  if (typeof type === "function") return new type(props, ...children);
   return {
     type, // add the new here if the type is a function
     props: {
