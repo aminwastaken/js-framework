@@ -5,7 +5,6 @@ class HomePage extends Component {
   constructor(props, children) {
     super();
     this.props = props;
-    console.log(this.props);
     return this.buildComponenent();
   }
 

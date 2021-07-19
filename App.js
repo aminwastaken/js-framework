@@ -1,6 +1,7 @@
 import HomePage from "./components/HomePage.js";
 import Component from "./framework/Component.js";
 import createElement from "./framework/functions/createElement.js";
+import Main from "./components/main.js";
 
 class App extends Component {
   // all components should extend from the componenet class
@@ -10,18 +11,10 @@ class App extends Component {
   }
 
   buildComponenent() {
-    const homePage = createElement(HomePage, { title: "this is the title" });
-    const someText = createElement("p", null, "some more text"); // creating a paragraph
-    const output = createElement(
-      // creating a div that contains a home page, a paragraph and a text node
-      "div",
-      null, // no properties passed
-      homePage, // child 1
-      someText, // child 2
-      "testing testing" // child 3
-      // you can pass as many children as you want in here
-    );
+    const output = createElement(Main);
     return output;
+    // routeFunc("/", Main)
+    // routeFunc("/", createElement(Main))
   }
 }
 
