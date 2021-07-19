@@ -1,3 +1,4 @@
+import setState from "./functions/setState.js";
 import shouldUpdate from "./functions/shouldUpdate.js";
 
 //this object contains all of the framework tools
@@ -5,6 +6,7 @@ import shouldUpdate from "./functions/shouldUpdate.js";
 const Component = function () {};
 
 Component.prototype.shouldUpdate = shouldUpdate;
+Component.prototype.setState = setState;
 Component.prototype.display = undefined;
 
 export default Component;
