@@ -8,7 +8,5 @@ const Component = function () {};
 
 Component.prototype.shouldUpdate = shouldUpdate;
 Component.prototype.setState = setState;
-Component.prototype.render = render;
-Component.prototype.display = undefined;
 
 export default Component;

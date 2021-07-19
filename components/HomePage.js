@@ -64,5 +64,5 @@ class HomePage extends Component {
     return container;
   }
 }
-
+HomePage.prop_types = {title: {type: "string"}};
 export default HomePage;
