@@ -7,7 +7,7 @@ export default function type_check(variable, conf) {
         not_failed = false;
       }
     }
-    else if(variable === null){
+    else if(variable === null || variable === undefined){
       if(conf.type != 'null') {
         not_failed = false;
       }

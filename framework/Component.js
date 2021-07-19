@@ -7,7 +7,5 @@ const Component = function () {};
 
 Component.prototype.shouldUpdate = shouldUpdate;
 Component.prototype.setState = setState;
-Component.prototype.display = undefined;
-Component.prototype.prop_types = undefined;
 
 export default Component;

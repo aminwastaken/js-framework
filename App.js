@@ -1,6 +1,7 @@
 import Component from "./framework/Component.js";
 import createElement from "./framework/functions/createElement.js";
 import Main from "./components/main.js";
+import TypeCheckComponent from "./components/TypeCheckComponent.js";
 import routing from "./framework/functions/routing.js";
 
 class App extends Component {
@@ -21,6 +22,10 @@ class App extends Component {
         path: "/third",
         component: createElement("div", null, "This is the third route"),
       },
+      /*{
+        path: "/typeCheckError",
+        component: createElement(TypeCheckComponent, {}),
+      },*/
     ]);
 
   }
