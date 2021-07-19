@@ -36,5 +36,6 @@ class HomePage extends Component {
     return container;
   }
 }
-
+HomePage.prop_types = {};
+//HomePage.prop_types = {title: {type: "number"}}; TypeCheck Example (throws error)
 export default HomePage;
