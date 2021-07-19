@@ -1,6 +1,6 @@
 // function that generates the html content
 
-const render = (obj) => {
+const render = (obj, node, replace = false) => {
   let elementToRender = "";
   if (typeof obj.type === "string") {
     elementToRender = document.createElement(obj.type); // creating a node
@@ -9,7 +9,7 @@ const render = (obj) => {
         const childToRender =
           typeof child === "string"
             ? document.createTextNode(child) // if the child is a string, a text node is created, this node will be inserted in the element to render
-            : render(child); // the render function gets called for each child that isn't a string
+            : render(child, node); // the render function gets called for each child that isn't a string
         elementToRender.appendChild(childToRender); // all children are added inside the parent element
       }
     }
@@ -30,9 +30,10 @@ const render = (obj) => {
   }
   // if the element is a function it gets called, and all the poperties get passed to the function
   if (typeof obj.type === "function") {
-    elementToRender = render(obj.type(obj.props));
+    elementToRender = render(obj.type(obj.props), node);
   }
-
+  if (replace) node.replaceChild(elementToRender);
+  else node.appendChild(elementToRender);
   return elementToRender;
 };
 
