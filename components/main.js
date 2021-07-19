@@ -12,12 +12,14 @@ class Main extends Component {
   buildComponenent() {
     const homePage = createElement(HomePage, { title: "this is the title" });
     const someText = createElement("p", null, "some more text"); // creating a paragraph
+    // const typeCheckTest = createElement(()=>{}, { prop_types: "bool" }, "Type-check Test");
     const output = createElement(
       // creating a div that contains a home page, a paragraph and a text node
       "div",
       null, // no properties passed
       homePage, // child 1
       someText, // child 2
+      // typeCheckTest,
       "testing testing" // child 3
       // you can pass as many children as you want in here
     );
