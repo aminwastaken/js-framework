@@ -1,15 +1,20 @@
 import Component from "../framework/Component.js";
 import createElement from "../framework/functions/createElement.js";
+import render from "../framework/functions/render.js";
 
 class HomePage extends Component {
   constructor(props, children) {
     super();
     this.props = props;
+    this.setState({ count: 0 });
+    this.onclick = this.onclick.bind(this);
+    // this.buildComponenent = this.buildComponenent.bind(this);
     return this.buildComponenent();
   }
 
-  onclick(event) {
-    alert("it's working");
+  onclick() {
+    this.setState({count: this.state.count+1}); 
+    console.log(this.state);
   }
 
   buildComponenent() {
@@ -32,7 +37,30 @@ class HomePage extends Component {
       },
       "click me "
     );
-    const container = createElement("div", null, titleText, paragraph, button);
+
+    const counter = createElement(
+      "button",
+      {
+        onclick: this.onclick()
+      },
+      "+1"
+    );
+
+    const displayCount = createElement(
+      "div",
+      null,
+      (this.state.count).toString()
+    );
+
+    const container = createElement(
+      "div",
+      null,
+      titleText,
+      paragraph,
+      button,
+      counter,
+      displayCount
+    );
     return container;
   }
 }
