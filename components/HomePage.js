@@ -2,6 +2,7 @@ import Component from "../framework/Component.js";
 import createElement from "../framework/functions/createElement.js";
 import render from "../framework/functions/render.js";
 
+
 class HomePage extends Component {
   constructor(props, children) {
     super();
@@ -24,11 +25,10 @@ class HomePage extends Component {
       this.props.title
     );
     const paragraph = createElement(
-      "p",
-      { name: "pragraph" },
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel nisi metus. Suspendisse ac placerat nisi. Pellentesque eros augue."
+        "p",
+        { name: "pragraph" },
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel nisi metus. Suspendisse ac placerat nisi. Pellentesque eros augue."
     );
-
     const button = createElement(
       "button",
       {

@@ -1,16 +1,21 @@
+import UndefinedPropertyError from "../../Errors/undefined_property_error.js"
+
 export default Object.prototype.prop_access = function prop_access(path) {
     const obj = this;
     if (path == null || path == "" || typeof path != 'string'){
-        console.log(path+" not exist.")
+        console.error("prop_access: invalid path in object "+obj.toString()); // ToDo: Faire un autre erreur pour ça
         return obj
     }
     let result = path.split('.').reduce(function(prev, curr) {
-        return prev ? prev[curr] : null
+        if(prev){
+            if(prev[curr]){
+                return prev[curr]
+            } else {
+                throw new UndefinedPropertyError(curr, path, obj);
+            }
+        } else {
+            return null
+        }
     }, obj)
-    if (result) {
-        return result
-    } else {
-        console.log(path+" not exist.")
-        return obj
-    }
+    return result
 }

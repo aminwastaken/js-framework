@@ -1,4 +1,4 @@
-import "prop_access";
+import "./prop_access.js";
 
 export default String.prototype.interpolate = function (obj) {
     const str = this;
@@ -18,4 +18,4 @@ export default String.prototype.interpolate = function (obj) {
 // 		value2: 2
 // 	}
 // }
-// console.log("The object has values {{ value1 }} and {{ key.value2 }}".interpolate(object));
+// console.log("The object has values {{ value1 }} and {{ key.value2 }} but does not have {{ value3 }}.".interpolate(object));
