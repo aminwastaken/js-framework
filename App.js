@@ -2,6 +2,7 @@ import Component from "./framework/Component.js";
 import createElement from "./framework/functions/createElement.js";
 import Main from "./components/main.js";
 import TypeCheckComponent from "./components/TypeCheckComponent.js";
+import StringInterpolationComponent from "./components/StringInterpolationComponent.js";
 import routing from "./framework/functions/routing.js";
 
 class App extends Component {
@@ -27,6 +28,10 @@ class App extends Component {
       {
         path: "/typeCheckError",
         component: TypeCheckComponent,
+      },
+      {
+        path: "/testStringInterpolation",
+        component: StringInterpolationComponent,
       },
     ]);
 
