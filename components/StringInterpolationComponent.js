@@ -16,10 +16,15 @@ class StringInterpolationComponent extends Component {
 
     buildComponenent() {
 
+        // const container = createElement(
+        //     "p",
+        //     null,
+        //     "The object has values {{ value1 }} and {{ key.value2 }} but does not have {{ value3 }}.".interpolate(this.testObject)
+        // );
         const container = createElement(
             "p",
             null,
-            "The object has values {{ value1 }} and {{ key.value2 }} but does not have {{ value3 }}.".interpolate(this.testObject)
+            "The object has values {{ value1 }} and {{ key.value2 }}.".interpolate(this.testObject)
         );
         return container;
     }
