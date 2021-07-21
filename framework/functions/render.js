@@ -17,13 +17,15 @@ const render = (obj, node, replace = false) => {
     // getting all the event listeners from the input and implementing them in the element to render
     if (obj.props) {
       for (let prop in obj.props) {
-        if (prop.startsWith("on")) {
-          elementToRender.addEventListener(
-            prop.replace(/^on/, ""),
-            obj.props[prop]
-          );
-        } else {
-          elementToRender.setAttribute(prop, obj.props[prop]);
+        if(prop !== 'prop_access'){ // pas optimisé
+          if (prop.startsWith("on")) {
+            elementToRender.addEventListener(
+              prop.replace(/^on/, ""),
+              obj.props[prop]
+            );
+          } else {
+            elementToRender.setAttribute(prop, obj.props[prop]);
+          }
         }
       }
     }
