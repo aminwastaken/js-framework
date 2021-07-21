@@ -1,6 +1,7 @@
 import HomePage from "./HomePage.js";
 import Component from "../framework/Component.js";
 import createElement from "../framework/functions/createElement.js";
+import Link from "./Link.js";
 
 class Main extends Component {
   // all components should extend from the componenet class
@@ -10,6 +11,7 @@ class Main extends Component {
   }
 
   buildComponenent() {
+
     const homePage = createElement(HomePage, { title: "this is the title" });
     const someText = createElement("p", null, "some more text"); // creating a paragraph
     const output = createElement(

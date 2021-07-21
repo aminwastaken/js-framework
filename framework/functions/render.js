@@ -34,8 +34,10 @@ const render = (obj, node, replace = false) => {
   if (typeof obj.type === "function") {
     elementToRender = render(obj.type(obj.props), node);
   }
-  if (replace) node.replaceChild(elementToRender);
-  else node.appendChild(elementToRender);
+  if (replace) {
+    node.innerHTML = "";
+    node.appendChild(elementToRender);
+  } else node.appendChild(elementToRender);
   return elementToRender;
 };
 

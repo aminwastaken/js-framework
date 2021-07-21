@@ -9,6 +9,7 @@ class App extends Component {
   // all components should extend from the componenet class
   constructor() {
     super(); // loading the parent component methods and properties
+    this.setParent()
     return this.buildComponenent(); // this function should always be called, it returns the object to render
   }
 
